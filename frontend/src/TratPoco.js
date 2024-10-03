@@ -1,8 +1,45 @@
 import axios from "axios";
 import React, { useEffect, useRef } from "react";
-import toast from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import styled from "styled-components";
 
-const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
+const FormContainer = styled.form`
+  display: flex;
+  align-item: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 5px #ccc;
+  border-radius: 5px;
+`;
+
+const Button = styled.button`
+ padding: 10px;
+ cursor: pointer;
+ border-radius: 5px;
+ border: none;
+ background-color: #2c73d2;
+ color: white;
+ height: 42px;
+`;
+
+const Input = styled.input`
+width: 120px;
+padding: 0 10px;
+border: 1px solid #bbb;
+border-radius: 5px;
+height: 40px;
+`;
+
+const Label = styled.label``;
+
+const InputArea = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const FORM = ({ getUsers, onEdit, setOnEdit}) =>  {
     const ref = useRef();
 
     useEffect(() =>{
@@ -11,15 +48,15 @@ const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
 
             user.data.value = onEdit.data;
             user.hora.value = onEdit.data;
-            user.phP1Bruto.value = onEdit.data;
-            user.phP1Trat.value = onEdit.data;
-            user.cloro.value = onEdit.data;
-            user.condtBruto.value = onEdit.data;
-            user.condtTrat.value = onEdit.data;
-            user.alcBruto.value = onEdit.data;
-            user.alcTrat.value = onEdit.data;
-            user.durBruto.value = onEdit.data;
-            user.durTrat.value = onEdit.data;
+            user.phP1Bruto.value = onEdit.phP1Bruto;
+            user.phP1Trat.value = onEdit.phP1Trat;
+            user.cloro.value = onEdit.cloro;
+            user.condtBruto.value = onEdit.condtBruto;
+            user.condtTrat.value = onEdit.condtTrat;
+            user.alcBruto.value = onEdit.alcBruto;
+            user.alcTrat.value = onEdit.alcTrat;
+            user.durBruto.value = onEdit.durBruto;
+            user.durTrat.value = onEdit.durTrat;
 
         }
     }, [onEdit]);
@@ -47,7 +84,7 @@ const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
     } 
     if (onEdit) {
         await axios
-        .put("http://localhost:8080/" + onEdit.id,{
+        .put("http://localhost:8080/Poco" + onEdit.id,{
             data:  user.data.value,
             hora:  user.hora.value,
             phP1Bruto: user.phP1Bruto.value,
@@ -62,7 +99,7 @@ const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
         .catch(({ data }) => toast.error(data));
     } else {
         await axios
-        .post("http://localhost:8080/" , {
+        .post("http://localhost:8080/Poco" , {
             data:  user.data.value,
             hora:  user.hora.value,
             phP1Bruto: user.phP1Bruto.value,
@@ -98,7 +135,8 @@ const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
   };
 
     return(
-        <formPoco ref = {ref} onSubmit = {handleSubmit}>
+
+        <FormContainer ref = {ref} onSubmit = {handleSubmit}>
 
             <InputArea>
             <Label>Data</Label>
@@ -157,11 +195,11 @@ const formPoco = ({ getUsers, onEdit, setOnEdit}) => {
 
             <Button type ="submit">Salvar</Button>
 
-        </formPoco>
+        </FormContainer>
         
 
 
     );
-}
+};
 
-export default formPoco;
+export default FORM;
