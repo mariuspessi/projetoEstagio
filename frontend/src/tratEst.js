@@ -4,36 +4,47 @@ import React, { useRef, useEffect } from  "react";
 import styled from "styled-components";
 
 
+
 const FormContainer = styled.form`
   display: flex;
   align-item: flex-end;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
+  background-color: #2596be;
 `;
 
 const Button = styled.button`
- padding: 10px;
+ padding: 0px 100px;
  cursor: pointer;
  border-radius: 5px;
  border: none;
- background-color: #2c73d2;
- color: white;
- height: 42px;
+ background-color: #dbe1dd;
+ color: black;
+ height: 52px;
+ margin-left: 35%;
 `;
 
 const Input = styled.input`
-width: 120px;
-padding: 0 10px;
+width: 200px;
+padding: 0 200px;
 border: 1px solid #bbb;
 border-radius: 5px;
 height: 40px;
+margin-left : 18%;
+margin-top: 0.1%;
+margin-botton: 5%;
+background-color: #dbe1dd;
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+margin-left: 18%;
+margin-botton: 20%;
+color:  #dbe1dd;
+`;
 
 const InputArea = styled.div`
   display: flex;
@@ -148,7 +159,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
        
     return (
 
-      <formContainer ref= {ref} onSubmit = {handleSubmit}>
+      <FormContainer ref= {ref} onSubmit = {handleSubmit}>
 
         <InputArea>
         <Label>Data</Label>
@@ -223,7 +234,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Button type = "submit">Salvar</Button>
            
 
-</formContainer>
+</FormContainer>
         
         
     );

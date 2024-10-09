@@ -4,10 +4,11 @@ import FoRM from './tratamentoETE';
 import Form from './tratEst';
 import FORm from "./phLagoa";
 import FORM from "./TratPoco";
-//import Footer from './components/footer';
+import Footer from './components/footer';
 import {toast, ToastContainer} from 'react-toastify';
 import Home from './components/home';
 import Navbar from './components/navBar';
+import global from './styles/global';
 //import Rota from "./components/rotas";
 import axios from 'axios';
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/eta" element={<Form />} />
           <Route path="/poco" element={<FORM />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
     

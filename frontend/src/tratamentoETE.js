@@ -2,43 +2,60 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
+import global from './styles/global';
 
 
 const FormContainer = styled.form`
   display: flex;
   align-item: flex-end;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 5px;
+  background-color: #2596be;
 `;
 
 const Button = styled.button`
- padding: 10px;
+ padding: 0px 100px;
  cursor: pointer;
  border-radius: 5px;
  border: none;
- background-color: #2c73d2;
- color: white;
- height: 42px;
+ background-color: #dbe1dd;
+ color: black;
+ height: 52px;
+ margin-left: 35%;
 `;
 
 const Input = styled.input`
-width: 120px;
-padding: 0 10px;
+width: 200px;
+padding: 0 200px;
 border: 1px solid #bbb;
 border-radius: 5px;
 height: 40px;
+margin-left : 18%;
+margin-top: 0.1%;
+margin-botton: 5%;
+background-color: #dbe1dd;
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+margin-left: 18%;
+margin-botton: 20%;
+color:  #dbe1dd;
+`;
 
 const InputArea = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const H2 = styled.h2`
+width: 600px;
+margin-left: 40%;
+`;
+
 
 const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
     const ref = useRef();
@@ -138,70 +155,70 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             !user.solidosD1.value  ||
             !user.vazao.value      ||
             !user.CargaOrgD1.value ||
-            user.dqoSFlot.value    ||
-            user.phSFloat.value ||
-            user.tempSFloat.value ||
-            user.solidosSFloat.value ||
-            user.ssSFloat.value ||
-            user.dqoRio.value ||
-            user.phRio.value ||
-            user.tempRio.value ||
-            user.oxRio.value ||
-            user.solidosRio.value ||
-            user.phSec.value ||
-            user.solidosSec.value ||
-            user.vazaoSec.value ||
-            user.phTerc.value ||
-            user.solidosTerc.value ||
-            user.vazaoTerc.value ||
-            user.dqoDecSec.value ||
-            user.phDecSec.value ||
-            user.tempDecSec.value ||
-            user.solidoDecSec.value ||
-            user.oxDisDecSec.value ||
-            user.vazaoDecSec.value ||
-            user.dqoDecTerc.value ||
-            user.phDecTerc.value ||
-            user.tempDecTerc.value ||
-            user.solidoDecTerc.value ||
-            user.oxDisDecTerc.value ||
-            user.vazaoDecTerc.value ||
-            user.eficBio.value ||
-            user.eficProc.value ||
-            user.dqoMont.value ||
-            user.phMont.value ||
-            user.tempMont.value ||
-            user.oxMont.value ||
-            user.solidoMont.value ||
-            user.dqoJust.value ||
-            user.phJust.value ||
-            user.tempJust.value ||
-            user.oxJust.value ||
-            user.solidoJust.value ||
-            user.dqoL1.value ||
-            user.phL1.value ||
-            user.tempL1.value ||
-            user.oxL1.value ||
-            user.solidoL1.value ||
-            user.ssL1.value ||
-            user.nitroL1.value ||
-            user.fosfL1.value ||
-            user.relFML1.value ||
-            user.ivlL1.value ||
-            user.prodLodoL1.value ||
-            user.retHidroL1.value ||
-            user.dqoL2.value ||
-            user.phL2.value ||
-            user.oxL2.value ||
-            user.solidoL2.value ||
-            user.ssL2.value ||
-            user.nitroL2.value ||
-            user.fosfL2.value ||
-            user.relFML2.value ||
-            user.ilvL2.value ||
-            user.prodLodoL2.value ||
-            user.retHidroL2.value ||
-            user.analist.value 
+            !user.dqoSFlot.value    ||
+            !user.phSFloat.value ||
+            !user.tempSFloat.value ||
+            !user.solidosSFloat.value ||
+            !user.ssSFloat.value ||
+            !user.dqoRio.value ||
+            !user.phRio.value ||
+            !user.tempRio.value ||
+            !user.oxRio.value ||
+            !user.solidosRio.value ||
+            !user.phSec.value ||
+            !user.solidosSec.value ||
+            !user.vazaoSec.value ||
+            !user.phTerc.value ||
+            !user.solidosTerc.value ||
+            !user.vazaoTerc.value ||
+            !user.dqoDecSec.value ||
+            !user.phDecSec.value ||
+            !user.tempDecSec.value ||
+            !user.solidoDecSec.value ||
+            !user.oxDisDecSec.value ||
+            !user.vazaoDecSec.value ||
+            !user.dqoDecTerc.value ||
+            !user.phDecTerc.value ||
+            !user.tempDecTerc.value ||
+            !user.solidoDecTerc.value ||
+            !user.oxDisDecTerc.value ||
+            !user.vazaoDecTerc.value ||
+            !user.eficBio.value ||
+            !user.eficProc.value ||
+            !user.dqoMont.value ||
+            !user.phMont.value ||
+            !user.tempMont.value ||
+            !user.oxMont.value ||
+            !user.solidoMont.value ||
+            !user.dqoJust.value ||
+            !user.phJust.value ||
+            !user.tempJust.value ||
+            !user.oxJust.value ||
+            !user.solidoJust.value ||
+            !user.dqoL1.value ||
+            !user.phL1.value ||
+            !user.tempL1.value ||
+            !user.oxL1.value ||
+            !user.solidoL1.value ||
+            !user.ssL1.value ||
+            !user.nitroL1.value ||
+            !user.fosfL1.value ||
+            !user.relFML1.value ||
+            !user.ivlL1.value ||
+            !user.prodLodoL1.value ||
+            !user.retHidroL1.value ||
+            !user.dqoL2.value ||
+            !user.phL2.value ||
+            !user.oxL2.value ||
+            !user.solidoL2.value ||
+            !user.ssL2.value ||
+            !user.nitroL2.value ||
+            !user.fosfL2.value ||
+            !user.relFML2.value ||
+            !user.ilvL2.value ||
+            !user.prodLodoL2.value ||
+            !user.retHidroL2.value ||
+            !user.analist.value 
         ) {
             return toast.warn("Preencha todos os campos!");
           }
@@ -442,7 +459,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
     return(
         <FormContainer ref = {ref} onSubmit = {handleSubmit }>
 
-            <h1>Decantador Primário</h1>
+            <H2>Decantador Primário</H2>
 
             <InputArea>
             <Label>Data</Label>
@@ -474,7 +491,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "solidosD1"/>
             </InputArea>
 
-            <h2>Saída do Flotador</h2>
+            <H2>Saída do Flotador</H2>
         
             <InputArea>
             <Label> DQO Saída FlotoDecantador</Label>
@@ -501,7 +518,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "ssSFlot"/>
             </InputArea>
 
-            <h2>Ponto de Despejo do Efleunte</h2>
+            <H2>Ponto de Despejo do Efleunte</H2>
             <InputArea>
             <Label>DQO</Label>
             <Input name = "dqoRio"/>
@@ -527,7 +544,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "solidosRio"/>
             </InputArea>
 
-            <h2>Retorno do Lodo Secundário</h2>
+            <H2>Retorno do Lodo Secundário</H2>
             <InputArea>
             <Label>pH</Label>
             <Input name = "phSec"/>
@@ -543,7 +560,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "vazaoSec"/>
             </InputArea>
 
-            <h2>Retorno do Lodo Terciário</h2>
+            <H2>Retorno do Lodo Terciário</H2>
 
             <InputArea>
             <Label>pH</Label>
@@ -560,7 +577,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "vazaoTerc"/>
             </InputArea>
 
-            <h2>Saída Decantador Secundário</h2>
+            <H2>Saída Decantador Secundário</H2>
             <InputArea>
             <Label>DQO</Label>
             <Input name = "dqoDecSec"/>
@@ -591,7 +608,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "vazaoDecSec"/>
             </InputArea>
 
-            <h2>Saída Decantador Terciário</h2>
+            <H2>Saída Decantador Terciário</H2>
             <InputArea>
             <Label>DQO</Label>
             <Input name = "dqoDecTerc"/>
@@ -632,60 +649,62 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "eficProc"/>
             </InputArea>
 
-           <h2>Ribeirão Ferraz</h2>
-           <h2>Montante</h2>
             <InputArea>
+
+           <h1>Ribeirão Ferraz</h1>
+           <H2>Montante</H2>
+            
             <Label>DQO</Label>
             <Input name = "dqoMont"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>pH</Label>
             <Input name = "phMont"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>Temperatura</Label>
             <Input name = "tempMont"/>
-            </InputArea>
+           
 
-            <InputArea>
+            
             <Label>Óxigenio Dissolvido</Label>
             <Input name = "oxMont"/>
-            </InputArea>
+           
 
-            <InputArea>
             <Label>Sólidos</Label>
             <Input name = "solidoMont"/>
-            </InputArea>
+            
+            
 
-            <h2>Jusante</h2>
-            <InputArea>
+            <H2>Jusante</H2>
+            
             <Label>DQO</Label>
             <Input name = "dqoJust"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>pH</Label>
             <Input name = "phJust"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>Temperatura</Label>
             <Input name = "tempJust"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>Óxigenio Dissolvido</Label>
             <Input name = "oxJust"/>
-            </InputArea>
+            
 
-            <InputArea>
+            
             <Label>Sólidos</Label>
             <Input name = "solidoJust"/>
             </InputArea>
 
-            <h2>Lagoa Aeração 1</h2>
+            <H2>Lagoa Aeração 1</H2>
             <InputArea>
             <Label>DQO</Label>
             <Input name = "dqoL1"/>
@@ -746,7 +765,7 @@ const FoRM = ({ getUsers, setOnEdit, onEdit }) => {
             <Input name = "retHidroL1"/>
             </InputArea>
 
-            <h2>Lagoa Aeração 2</h2>
+            <H2>Lagoa Aeração 2</H2>
             <InputArea>
             <Label>DQO</Label>
             <Input name = "dqoL2"/>

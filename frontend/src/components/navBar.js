@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import './Navbar.css'; // Para estilização da Navbar
+
+
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h1>Meu Site</h1>
+        <h1>Tratamentos</h1>
       </div>
       <ul className="navbar-links">
        
